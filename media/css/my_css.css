@@ -1,0 +1,47 @@
+/* Styles */
+
+
+.form_err{
+	display:inline-block;
+	margin-left:5px;
+	color:red;
+}
+
+
+#html_result{
+	/*width:500px;*/
+	background:#B0CEB0;
+}
+
+.all_rate_header{
+	background:#dff0d8;
+	width:155px;
+	height:31px;
+}
+
+.all_rate_value{
+	border:1px solid #dff0d8;
+	width:155px;
+	height:31px;
+}
+
+.main_data{
+	margin-top:50px;	
+}
+
+
+#con_form{
+	margin-top:60px;
+}
+
+#html_result{
+	margin-top:20px;
+	height:40px;
+	border-radius:5px;
+}
+
+.result_text{
+  height: 3em;  
+  line-height: 3em; 
+  color:white;
+}

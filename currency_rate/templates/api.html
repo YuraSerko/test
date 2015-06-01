@@ -1,0 +1,44 @@
+{% extends 'base_conv_form.html' %}
+
+
+{% block header %}
+{% if api_html %}
+	{{ block.super }}
+{% endif %}
+{% endblock %}
+
+
+
+{% block convert_form %}
+{% if api_html %}
+
+{{ block.super }}
+<script>
+$(document).ready(function() {
+   $('#id_summa').val('{{ amount }}');
+   $('#id_currency1').val('{{ currency_code_1 }}');
+   $('#id_currency1').trigger("chosen:updated");
+   $('#id_currency2').val('{{ currency_code_2 }}');
+   $('#id_currency2').trigger("chosen:updated");
+});
+</script>
+{% endif %}
+{% endblock %}
+
+
+{% block block_result %}
+{% if api_html %}
+    <div class = "container" id = 'html_result' >
+		<div class= "result_text initialism text-center">{{ result|safe }} </div>
+	</div> 
+{% endif %}
+
+{% if api_text or api_json %}
+		{{ result|safe }} 
+{% endif %}
+
+{% endblock %}
+
+
+
+

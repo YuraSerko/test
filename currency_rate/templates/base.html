@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="/media/js/jquery.js"></script>
+    <link href="/media/css/my_css.css" rel="stylesheet" type="text/css"/>
+    <script src = "/media/js/script.js"></script>
+    
+    <link href="/media/css/bootstrap.css" rel="stylesheet">
+    <script src="/media/js/bootstrap.js"></script>
+    <link href="/media/css/font-awesome.css" rel="stylesheet"></link>
+    
+	<title>Currency rate</title>
+	{% block extrahead %}{% endblock %}
+</head>
+
+<body>
+    
+
+	    {% block header %}
+	    <div class="container">
+	    	<div class = "row">
+	    		<h2>Converter.com</h2>
+	    		<div class = "navbar navbar-default">
+	    			<div class = "contaniner">
+	    				<div class = "navbar-header">
+	    					<a class="navbar-brand" href = "/">
+	    						<i class="fa fa-usd fa-lg"></i>
+	    						<i class="fa fa-exchange "></i>
+	    						<i class="fa fa-euro fa-lg"></i>
+	    					</a>
+	    					<button type = "button" class = "navbar-toggle" data-toggle ="collapse" data-target="#currency_menu">
+	    						<span class="sr-only">Открыть навигацию</span>
+	    						
+	    						<span class="icon-bar"></span>
+	    						<span class="icon-bar"></span>
+	    						<span class="icon-bar"></span>
+	    					</button>
+	    				</div>
+	    				<div class = "collapse navbar-collapse"  id = "currency_menu">
+	    					<ul class="nav navbar-nav">
+	    					
+	    						<li><a href = "/all_rate">all rates</a></li>
+	    						<li><a href = "/cross_curses">cross curses</a></li>
+	    						<li><a href = "">about</a></li>
+	    					</ul>
+	    				</div>
+	    					
+	    			</div>
+	    		</div>
+	    	</div>
+	    </div>
+	    {% endblock %}
+	    
+	    
+ 
+ 	
+    <div class="container" style="text-align: center;>
+	   	<div class="block_convert_form">
+			{% block convert_form %}
+					
+		    {% endblock %}
+	    </div>
+	 </div>
+	 
+	
+	 
+	 
+	 
+	 
+	{% block block_result %}
+			
+    {% endblock %}
+	 
+	 
+	 
+	
+	 
+	 
+	 
+	 <div class = "container">
+	 	<div class = "currency_data main_data" >
+	 		{% block currency_data %}
+	 		
+	 		{% endblock %}
+	 	</div>
+	 </div>
+	 
+</body>
+
+</html>

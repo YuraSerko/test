@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+	
+{% block block_result %}		
+	
+<div class = "container">
+<h3>all rates</h3>
+
+
+{% for k, v in rates.iteritems %}
+	<div >
+	{% for vv in  v %}
+		 <div class = "all_rate_block" style="display:inline-block;">
+			<div class = "all_rate_header" ><strong>{{ vv.currencies.api_name }}</strong></div>
+			<div class = "all_rate_value" >{{ vv.value|floatformat:3 }}</div>
+		 </div>
+	{% endfor %}
+	</div>
+	<br>
+{% endfor %}
+
+
+
+ 	
+{% endblock %}
+
+
+

@@ -36,12 +36,57 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'currency_rate',
 )
+
+
+
+import djcelery
+djcelery.setup_loader()
+BROKER_HOST = "localhost"
+BROKER_BACKEND = "redis"
+REDIS_PORT = 6379
+REDIS_HOST = "localhost"
+BROKER_USER = ""
+BROKER_PASSWORD = ""
+BROKER_VHOST = "0"
+REDIS_DB = 0
+REDIS_CONNECT_RETRY = True
+CELERY_SEND_EVENTS = True
+CELERY_RESULT_BACKEND = 'redis'
+CELERY_TASK_RESULT_EXPIRES = 10
+CELERYBEAT_SCHEDULER = "djcelery.schedulers.DatabaseScheduler"
+CELERY_ALWAYS_EAGER = False
+CELERY_SEND_TASK_ERROR_EMAILS = True
+# CELERY_TIMEZONE = 'Europe/London'
+CELERY_ENABLE_UTC = True
+INSTALLED_APPS += ('djcelery',)
+
+
+# print INSTALLED_APPS
+#CELERYD_OPTS="-A tasks"
+CELERY_IMPORTS = ('currency_rate.tasks',) 
+
+
+
+
+
+
+MEDIA_ROOT = 'media/'
+
+# URL that handles the media served from MEDIA_ROOT. Make sure to use a
+# trailing slash.
+# Examples: "http://example.com/media/", "http://media.example.com/"
+MEDIA_URL = 'media/'
+
+
+MEDIA_ROOT = 'media/'
+
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -82,8 +127,10 @@ DATABASES = {
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+#LANGUAGE_CODE = 'ru-Ru'
 
 TIME_ZONE = 'UTC'
+#TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -96,3 +143,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+api_id = '02500e618a6b4f0eb6ff64c03f971681'
+

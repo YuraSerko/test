@@ -1,0 +1,38 @@
+{% extends 'base_conv_form.html' %}
+
+
+{% block currency_data %}
+
+	<table class = "table">
+		<thead>
+		<tr class = "success">
+			{% for  basic_course in basic_courses %}
+					<th>{{ basic_course.currencies.api_name }}</th>
+			{% endfor %}
+		</tr>
+		</thead>
+		<tr>
+		{% for  basic_course in basic_courses %}
+					<td>{{ basic_course.value }}</td>
+		{% endfor %}
+		</tr>
+	</table>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+
+

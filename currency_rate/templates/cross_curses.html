@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+	
+{% block block_result %}		
+	
+<div class = "container">
+<h3>cross curses</h3>
+
+{% for pr in popular_rates %}
+{% for key, value in all_cross_course_dict.iteritems %}
+	{% if pr.currencies.api_name = key.currencies.api_name %}
+	<p>{{ key.currencies.api_name }}  
+	
+	
+	<table class = 'table table-bordered'>
+	<tr class = "success">
+		{% for name in value.0 %}
+			<th class ="th_cross">{{ name }}</th>
+		{% endfor %}
+	</tr>	
+		
+	<tr>	
+		{% for cross_value in value.1 %}
+			<td class ="td_cross"> {{ cross_value }}</td>
+		{% endfor %}
+	</tr>
+	</table>
+	<br>
+	<br>
+	{% endif %}	
+{% endfor %}
+{% endfor %} 
+</div>
+	
+
+{% endblock %}
+
+
+
